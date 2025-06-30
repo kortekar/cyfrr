@@ -207,9 +207,12 @@ body {
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
-          <li class="nav-item">
-            <span class="ms-3 theme-toggle" id="themeToggle" style="cursor: pointer;">🌙 Dark</span>
-          </li>
+          <li class="nav-item ms-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="themeToggle">
+              <label class="form-check-label" for="themeToggle" id="themeToggleLabel">Dark</label>
+            </div>
+          </li>  
         </ul>
       </div>
     </div>
@@ -638,25 +641,43 @@ body {
   <script>
     AOS.init({ duration: 800, once: true });
 
-    // Theme toggle logic (Untouched)
+
     const toggle = document.getElementById("themeToggle");
+    const toggleLabel = document.getElementById("themeToggleLabel");
     const root = document.documentElement;
-    const currentTheme = localStorage.getItem("theme") || "light";
-    root.setAttribute("data-bs-theme", currentTheme);
-
-    if (currentTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      toggle.textContent = "☀️ Light";
+    const logoImg = document.getElementById("logoImg");
+  
+    const lightLogo =   "cyfrr-light.png";
+    const darkLogo =  "cyfrr-dark.png"; 
+  
+    function updateLogo(theme) {
+      logoImg.src = theme === "dark" ? darkLogo : lightLogo;
     }
-
-    toggle.addEventListener("click", () => {
-      const newTheme = root.getAttribute("data-bs-theme") === "light" ? "dark" : "light";
-      root.setAttribute("data-bs-theme", newTheme);
-      document.body.classList.toggle("dark-mode");
-      toggle.textContent = newTheme === "dark" ? "☀️ Light" : "🌙 Dark";
-      localStorage.setItem("theme", newTheme);
+  
+    
+    const savedTheme = localStorage.getItem("theme") || "light";
+    root.setAttribute("data-bs-theme", savedTheme);
+    updateLogo(savedTheme);
+  
+    
+    if (savedTheme === "dark") {
+      toggle.checked = true;
+      toggleLabel.textContent = "Dark";
+    } else {
+      toggle.checked = false;
+      toggleLabel.textContent = "Light";
+    }
+  
+    
+    toggle.addEventListener("change", () => {
+      const next = toggle.checked ? "dark" : "light";
+      root.setAttribute("data-bs-theme", next);
+      localStorage.setItem("theme", next);
+      toggleLabel.textContent = next === "dark" ? "Dark" : " Light";
+      updateLogo(next);
     });
 
+    
     // --- View Toggle Logic (Untouched, still works for diagnosis/recovery sections) ---
     document.addEventListener("DOMContentLoaded", () => {
         const viewToggleButtons = document.querySelectorAll(".view-toggle-buttons .btn");
