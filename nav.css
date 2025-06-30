@@ -73,6 +73,6 @@
         border: 0;
         height: 2px;
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--bs-primary), rgba(0, 0, 0, 0));
-        margin: 60px 0;
+        margin: 6px 0;
         opacity: 0.15;
       }
