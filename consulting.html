@@ -384,25 +384,27 @@
 
 
 
+  <!-- 📬 Contact Form -->
   <div class="container py-5">
-    <div id="contact" class="card-custom" data-aos="fade-right" data-aos-delay="200">
-        <h3 class="mb-4">📨 Get in Touch</h3>
-        <form>
-          <div class="mb-3" data-aos="fade-right" data-aos-delay="300">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Name...." required>
-          </div>
-          <div class="mb-3" data-aos="fade-right" data-aos-delay="400">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-          </div>
-          <div class="mb-3" data-aos="fade-right" data-aos-delay="500">
-            <label for="message" class="form-label">Your Message</label>
-            <textarea class="form-control" id="message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="600">Send Message</button>
-        </form>
-      </div>
+    <div id="contact" class="card-custom" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="mb-4">📨 Get in Touch</h3>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="605fcef7-00b1-413d-85c7-91c4cbb8a0a7">
+        <div class="mb-3">
+          <label for="name" class="form-label">Your Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Name...." required>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Your Message</label>
+          <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
   </div>
 
   <section class="py-5 bg-primary text-white text-center" data-aos="zoom-in">
