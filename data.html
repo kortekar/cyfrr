@@ -26,6 +26,14 @@ body {
       font-weight: 700;
     }
 
+    a[href^="tel"] {
+    transition: all 0.3s ease;
+}
+a[href^="tel"]:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+}
+    
     .card-custom {
       background: var(--bs-light-bg-subtle); 
       border-radius: 12px;
@@ -348,20 +356,51 @@ body {
   </div>
 
   
-  <div class="container py-5">
+<div class="container py-5">
     <h2 class="section-title text-center" data-aos="fade-up">💾 Data Recovery Charges</h2>
     
-    <p class="text-center mt-3" data-aos="fade-up" data-aos-delay="50" style="max-width: 700px; margin: 0 auto;">
-        Data recovery charges depend on the type of device and the extent of data loss or damage. 
-        A final quote will be provided after a complete diagnosis of your device.
-    </p>
+    <div 
+        data-aos="fade-up" 
+        data-aos-delay="50"
+        style="
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+            text-align: center;
+            transition: all 0.3s ease;
+        "
+        onmouseover="this.style.transform='translateY(-6px) scale(1.01)'; this.style.boxShadow='0 15px 40px rgba(0,0,0,0.15)'"
+        onmouseout="this.style.transform='none'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.08)'"
+    >
+        <p class="mt-2" style="max-width: 650px; margin: 0 auto; color: #ff6f3c; font-size: 1.05rem;">
+            Data recovery charges depend on the type of device and the extent of data loss or damage. 
+            A final quote will be provided after a complete diagnosis of your device.
+        </p>
 
-    <p class="text-center mt-3" data-aos="fade-up" data-aos-delay="100">
-        📞 Call: 
-        <a href="tel:7406244916" style="font-weight: bold; color: #007bff; font-size: 1.2rem; text-decoration: none;">
-            7406244916
-        </a>
-    </p>
+        <div class="mt-4">
+            <a href="tel:7406244916" 
+               style="
+                    display: inline-block;
+                    background: linear-gradient(135deg, #007bff, #0056b3);
+                    color: #fff;
+                    padding: 12px 28px;
+                    border-radius: 30px;
+                    font-weight: 600;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    box-shadow: 0 6px 15px rgba(0,123,255,0.3);
+                    transition: all 0.3s ease;
+               "
+               onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 10px 25px rgba(0,123,255,0.5)'"
+               onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 15px rgba(0,123,255,0.3)'"
+            >
+                📞 Call : 7406244916
+            </a>
+        </div>
+    </div>
 </div>
 
   
